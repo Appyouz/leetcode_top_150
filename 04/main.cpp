@@ -8,8 +8,10 @@ beyond the returned k (hence they are underscores).
 class Solution {
 public:
   int removeDuplicate(std::vector<int> &nums) {
+    // k=count
     int k = 0;
     for (int i = 0; i < nums.size(); ++i) {
+      // if elements has more than 2 duplicates then remove it
       if (k < 2 || nums[i] != nums[k - 2]) {
         nums[k++] = nums[i];
       }
